@@ -6,6 +6,8 @@ One textual sentence might have several different interpretations, and this ambi
 
 This demo was designed and implemented within 36 hours in [HACKxFDU 2016](https://www.hackx.org/projects/6), the largest coding hackathon in China at that time. We won the Microsoft Most Intelligent Award out of the 438 participators. 
 
+[Ning](http://ning.design/) further developed & researched on this topic. You can find her amazing work [here](http://ning.design/CE.html)!
+
 ## Demonstration
 
 1. This is the normal user interface when the Skype-E plugin is not activated:
