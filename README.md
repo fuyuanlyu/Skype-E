@@ -2,7 +2,7 @@
 
 ## Introduction
 
-One textual sentence might have several different interpretations, and this ambiguity of human language can easily lead to misunderstanding in online textual communication. In this demo, we designed and implemented Skype-E, an emotion-based plugin for telecommunication software like Skype. With a laptop camera, Skype-E detects and recognizes the facial expression changes of a user, and notifies the other user by re-rendering the graphical user interfaces according to the detected emotion. This plugin is activated only under the agreement of both users. The raw images captured by the camera are kept secret from other users. 
+One textual sentence might have several different interpretations, and this ambiguity of human language can easily lead to misunderstanding in online textual communication. In this demo, we designed and implemented Skype-E, an emotion-based plugin for telecommunication software like Skype. With a laptop camera, Skype-E detects and recognizes the facial expression changes of a user, and notifies the other user by re-rendering the graphical user interfaces according to the detected emotion. This plugin is activated only under the agreement of both users. Only the emotion analysis results are available to users, and the raw images captured by the camera are kept secret
 
 This demo was designed and implemented within 36 hours in [HACKxFDU 2016](https://www.hackx.org/projects/6), the largest coding hackathon in China at that time. We won the Microsoft Most Intelligent Award out of the 438 participators. 
 
