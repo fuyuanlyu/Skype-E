@@ -1,16 +1,37 @@
 # Skype-E
 
-## Summary
+## Introduction
 
-One textual sentence might have several different interpretations, and this ambiguity of human language can easily lead to misunderstanding in online textual communication. In this demo, we designed and implemented Skype-E, an emotion-based plugin for telecommunication software like Skype. With a laptop camera, Skype-E detects and recognizes the facial expression changes of a user, and notifies the other user by rerendering their graphical user interfaces according to the detected emotion. This plugin is activated only under the agreement of both users. The raw images captured by the camera are kept secret from other users. 
+One textual sentence might have several different interpretations, and this ambiguity of human language can easily lead to misunderstanding in online textual communication. In this demo, we designed and implemented Skype-E, an emotion-based plugin for telecommunication software like Skype. With a laptop camera, Skype-E detects and recognizes the facial expression changes of a user, and notifies the other user by re-rendering the graphical user interfaces according to the detected emotion. This plugin is activated only under the agreement of both users. The raw images captured by the camera are kept secret from other users. 
+
+This demo was designed and implemented within 36 hours in [HACKxFDU 2016](https://www.hackx.org/projects/6), the largest coding hackathon in China at that time. We won the Microsoft Most Intelligent Award out of the 438 participators. 
 
 ## Demonstration
 
+1. This is the normal user interface when the Skype-E plugin is not activated:
+
+![](./images/1.png)
+
+2. You will receive a notification when your friend suggest activating Skype-E. The emotion mode is turned on only under your agreement:
+
+![](./images/2.png)
+
+3. With the emotion mode turned on, our plugin will recognize your friend's facial expression every time she sends you a message. Your user interface and your friend's avatar will be re-rendered according to her recent emotion. The emotion curve of your friend is also plotted on the top of the window. The following UI suggests your friend is in a happy mood:
+
+![](./images/3.png)
+
+4. We designed four sets of UI, supporting four different emotions, including happy, neutral, angry and sad. The following UI denotes your friend is getting angry:
+
+![](./images/4.png)
+
+5. A user can also trigger the plugin actively by clicking the bottom right button. In this case, the user will send a re-rendered avatar to her friend based on her current emotion:
+
+![](./images/5.png)
 
 
 ## Prerequisite
 
-The following packages are necessary for running this demo: 
+The following C# packages are requisite for running this demo: 
 
 * Microsoft.ProjectOxford.Emotion.1.0.0.1
 * Newtonsoft.Json.9.0.1
@@ -21,81 +42,13 @@ The following packages are necessary for running this demo:
 * AForge.Video.2.2.5
 * AForge.Video.DirectShow.2.2.5
 
-## Preprocessing
-
-We preprocess the images to invert the artificial disturbance as follows:
-
-```python
-cd traditional-learning-method/
-python3 preprocessing.py
-```
-
-![](./Presentation/preprocessing.png)
-
-## Traditional Methods
-
-* Enter the [traditional-learning-method/](./traditional-learning-method) folder:
-
-  `cd traditional-learning-method/`
-
-* KNN:
-
-  `python3 KNN.py`
-
-* SVM:
-
-  `python3 SVM.py`
-
-* Ensemble method:
-
-  `python3 voting.py`
-
-## CNN
-
-We try three kinds of network architectures, SimpleCNN, VGG and Resnet.
-
-Usage:
-
-```
-	cd deep-learning-method/
-	python tools/train.py [--gpu GPU-ID] [--dataset DATASET] [--net NET] 
-	[--resume path/to/resume/from] [--logdir path/to/log/dir]
-
-	arguments:
-	--gpu GPU-ID    		the id of GPU card to use
-	--dataset DATASET  		the dataset to train and test
-	--net NET     			the network structure to use
-					options: ConvNet,vgg16,vgg11,res18,res34,res50,res101      
-	--resume path/to/resume/from	resume training from the given path
-	--logdir path/to/log/dir	directory to log 
-```
-
-## Capsule
-
-Usage:
-
-```
-	cd capsule/
-	CUDA_VISIBLE_DEVICES=0 python3 capsule_network.py
-```
-
-## Results
-
-|  Model   | Accuracy / % |         Model          | Accuracy / % |
-| :------: | :----------: | :--------------------: | :----------: |
-|   KNN    |    98.40     | KNN without preprocess |    88.12     |
-|   SVM    |    98.75     | SVM without preprocess |    93.22     |
-| Ensemble |    98.40     |                        |              |
-|  VGG16 |       99.79  |  VGG16 without preprocess |    99.71     |
-| Res101     |  **99.83**  |  Res101 without preprocess |    99.73    |
-|  CapsNet      | 99.80  | CapsNet without preprocess |    99.78   |
+Our face detection part in the current version is based on Microsoft cognitive service APIs. Your will have to [subscribe](https://azure.microsoft.com/en-us/try/cognitive-services/my-apis/) to the APIs and replace Line 154 of [DetectionEmotion.cs](./demo/DetectionEmotion.cs) with your own subscription key.
 
 
+## Teammates
 
-## Team Member
-
-* [Weichao Mao](https://github.com/xizeroplus)
-* [Ruiheng Chang](https://github.com/crh19970307)
-
+* [Ning](https://github.com/xizeroplus)
+* [Fuyuan Lv](https://github.com/xizeroplus)
+* [Zhe Wang](https://github.com/xizeroplus)
 
 
