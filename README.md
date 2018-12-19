@@ -50,7 +50,7 @@ Our face detection part in the current version is based on Microsoft cognitive s
 ## Teammates
 
 * [Ning](http://ning.design/)
-* [Fuyuan Lv](https://github.com/xizeroplus)
+* [Fuyuan Lyu](https://github.com/silentspring2)
 * [Zhe Wang](https://github.com/xizeroplus)
 
 
